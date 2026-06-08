@@ -10,6 +10,15 @@
   color-scheme: dark;
 }
 
+html,
+body {
+  /* Stop stray absolutely-positioned elements (tooltips, glow blobs) from
+     widening the page and letting it swipe left/right on mobile.
+     `clip` avoids creating a scroll container, so the sticky navbar still works. */
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100;
 }
