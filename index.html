@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon & icons -->
+    <link rel="icon" type="image/svg+xml" href="/qr.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <!-- iOS standalone (Add to Home Screen) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="QR Studio" />
+
+    <!-- Apply saved theme before paint to avoid a flash (light is the default) -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('qrstudio-theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+          }
+        } catch (e) {}
+      })()
+    </script>
+
+    <!-- Primary SEO -->
+    <title>QR Studio — Free Online QR Code Generator</title>
+    <meta
+      name="description"
+      content="Generate free QR codes for websites, WhatsApp, phone, SMS, and email. Customize the size, preview live, and download as PNG — all in your browser."
+    />
+    <meta name="keywords" content="QR code generator, free QR code, WhatsApp QR, URL to QR, download QR code PNG" />
+    <link rel="canonical" href="https://qr-studio.vercel.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QR Studio" />
+    <meta property="og:title" content="QR Studio — Free Online QR Code Generator" />
+    <meta
+      property="og:description"
+      content="Generate and download custom QR codes for any link — fast, private, and free."
+    />
+    <meta property="og:url" content="https://qr-studio.vercel.app/" />
+    <meta property="og:image" content="https://qr-studio.vercel.app/qr.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="QR Studio — Free Online QR Code Generator" />
+    <meta
+      name="twitter:description"
+      content="Generate and download custom QR codes for any link — fast, private, and free."
+    />
+    <meta name="twitter:image" content="https://qr-studio.vercel.app/qr.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
