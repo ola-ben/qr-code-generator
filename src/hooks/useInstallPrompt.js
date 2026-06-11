@@ -47,8 +47,14 @@ export default function useInstallPrompt() {
     return outcome
   }, [deferred])
 
-  // Show the control if we can prompt (Android/desktop) or it's iOS (manual).
-  const canInstall = !isStandalone && !installed && (Boolean(deferred) || isIos)
+  // Whether the browser's native install prompt is ready to fire.
+  const canPrompt = Boolean(deferred)
 
-  return { canInstall, isIos, promptInstall }
+  // Hide the control entirely only once the app is actually installed/running
+  // standalone. Otherwise we always surface an install affordance so users know
+  // the app can be downloaded — falling back to manual instructions when the
+  // native prompt isn't available yet.
+  const isInstalled = isStandalone || installed
+
+  return { canPrompt, isIos, isInstalled, promptInstall }
 }
